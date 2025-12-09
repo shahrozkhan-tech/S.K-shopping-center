@@ -14,9 +14,79 @@
   />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
      <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
+        * { margin: 0;
+            padding: 0; 
+            box-sizing: border-box; 
+            font-family: Arial, sans-serif;
+        }
+         
 
-        /* Top Bar */
+       .cookie-banner h2 {
+    margin-bottom: 10px;
+    color: #333;
+  }
+
+  .cookie-banner p {
+    font-size: 14px;
+    line-height: 1.5;
+    color: #555;
+  }
+
+  .cookie-banner a {
+    color: #00A6E8;
+    text-decoration: underline;
+  }
+
+.cookie-banner {
+    color: #aaa;
+  position: fixed;
+  bottom: 20px;         
+  left: 20px;           
+  max-width: 700px;    
+  background: white;
+  padding: 20px 25px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-family: Arial, sans-serif;
+  z-index: 99999;
+
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.4s ease;
+}
+
+.cookie-banner.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.cookie-buttons {
+  margin-top: 15px;
+  display: flex;
+  gap: 10px;
+}
+
+.cookie-buttons button {
+  padding: 8px 16px;
+  font-size: 14px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-outline {
+  border: 2px solid #00A6E8;
+  color: #00A6E8;
+  background: transparent;
+}
+
+.btn-primary {
+  background: #00A6E8;
+  border: 2px solid #00A6E8;
+  color: white;
+}
+
+
         .top-bar {
             display: flex;
             justify-content: space-between;
@@ -34,7 +104,7 @@
              margin-left: 20px; 
             }
 
-        /* Navbar */
+   
         .navbar {
             display: flex; 
             justify-content: space-between;
@@ -70,7 +140,7 @@
              color: orange; 
             }
 
-        /* Hero Section */
+      
         .hero {
             height: 90vh;
             background: url('https://plus.unsplash.com/premium_photo-1683141052679-942eb9e77760?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8c2hvcHBpbmd8ZW58MHx8MHx8fDA%3D') no-repeat center/cover;
@@ -141,7 +211,7 @@
             color: #555;
             font-size: 16px;
         }
-        /* Cards Section */
+      
         .grid {
             margin: 50px;
             display: grid;
@@ -201,7 +271,7 @@
     gap: 40px;
   }
 
-  /* Text Styling */
+ 
   .about-text {
     flex: 1;
     min-width: 300px;
@@ -214,7 +284,7 @@
   }
 
   .about-text h2 span {
-    color: #ff6600; /* Highlight color */
+    color: #ff6600; 
   }
 
   .about-text p {
@@ -239,7 +309,7 @@
     background-color: #e65c00;
   }
 
-  /* Image Styling */
+
   .about-image {
     flex: 1;
     min-width: 300px;
@@ -258,7 +328,7 @@
     transform: scale(1.05);
   }
 
-  /* Responsive */
+ 
   @media (max-width: 768px) {
     .about-container {
       flex-direction: column-reverse;
@@ -483,8 +553,20 @@
     </style>
 </head>
 <body>
+<div id="cookie-banner" class="cookie-banner">
+  <h2>Your privacy is important to us.</h2>
+  <p>
+    We process your personal information to measure and improve our sites and service, to assist our marketing campaigns and to provide personalised content and advertising. 
+    <a href="#">Privacy Policy</a>.
+  </p>
 
-    <!-- Top Bar -->
+  <div class="cookie-buttons">
+    <button class="btn-outline">More Options</button>
+    <button class="btn-primary" onclick="acceptCookies()">Accept Cookies</button>
+  </div>
+</div>
+
+    
     <div class="top-bar">
         <div class="social">
             <i class="fab fa-facebook-f"></i>
@@ -498,11 +580,11 @@
         </div>
     </div>
 
-    <!-- Navbar -->
+
     <nav class="navbar">
        <div class="logo"> 
         <img src="assets/logo.png" alt="">
-        <!-- <h2>Shopping center</h2> -->
+       
        </div>
         <ul class="nav-links">
             <li><a href="#">Home</a></li>
@@ -515,7 +597,7 @@
         </ul>
     </nav>
 
-    <!-- Hero Section -->
+  
     <section class="hero">
         <div class="content">
             <h1>Shop With Us</h1>
@@ -592,7 +674,7 @@
       <button class="cart">cart</button>
   </div>
   </div>
-  <!-- About Us Section -->
+
 <section class="about-section">
   <div class="about-container">
     <div class="about-text">
@@ -610,7 +692,7 @@
     <p>Explore the wide range of services we offer to grow your business</p>
 
     <div class="services-grid">
-      <!-- Service 1 -->
+   
       <div class="service-card">
         <i class="fas fa-briefcase"></i>
         <h3>Business Consulting</h3>
@@ -618,7 +700,7 @@
         <a href="#">Learn More</a>
       </div>
 
-      <!-- Service 2 -->
+  
       <div class="service-card">
         <i class="fas fa-chart-line"></i>
         <h3>Market Analysis</h3>
@@ -626,7 +708,7 @@
         <a href="#">Learn More</a>
       </div>
 
-      <!-- Service 3 -->
+      
       <div class="service-card">
         <i class="fas fa-user-check"></i>
         <h3>User Monitoring</h3>
@@ -634,7 +716,7 @@
         <a href="#">Learn More</a>
       </div>
 
-      <!-- Service 4 -->
+   
       <div class="service-card">
         <i class="fas fa-handshake"></i>
         <h3>Seller Consulting</h3>
@@ -642,15 +724,14 @@
         <a href="#">Learn More</a>
       </div>
 
-      <!-- Service 5 -->
+   
         <div class="service-card">
         <i class="fas fa-coins"></i>
         <h3>Financial Investment</h3>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis quis molestiae vitae eligendi at.</p>
         <a href="#">Learn More</a>
       </div>
-
-      <!-- Service 6 -->
+>
         <div class="service-card">
         <i class="fas fa-wallet"></i>
         <h3>Financial Management</h3>
@@ -659,7 +740,7 @@
       </div>
     </div>
   </section>
-  <!-- Contact Form Section -->
+
 <section class="contact-section">
   <div class="contact-container">
     <h2>Get In Touch</h2>
@@ -724,8 +805,26 @@
     </div>
   </footer>
 
+     <script>
+   
+    document.addEventListener('DOMContentLoaded', function() {
+        const banner = document.getElementById('cookie-banner');
+  
+        setTimeout(() => {
+            banner.classList.add('show');
+        }, 2000);
+    });
+
+    function acceptCookies() {
+        const banner = document.getElementById('cookie-banner');
+        banner.classList.remove('show');
+       
+    }
+</script>
+
 
 </body>
 </html>
+
 
 
